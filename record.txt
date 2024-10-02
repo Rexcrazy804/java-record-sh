@@ -1,0 +1,125 @@
+RECORD QUESTIONS 
+
+1. Write a program to print Fibonacci series up to ‘n’ times (read ‘n’ as
+command line argument. 
+
+2. Write a program to create a class Complex that has two members real and
+imaginary and methods to initialize and print the complex number. Create
+another class ComplexOperations and provide static methods to add, multiply,
+and compare two complex numbers. 
+
+3. Create a package called pack which contains a class Prime with a member
+function checkPrime() to check whether a number is prime or not. Create another
+package called mypack which contains a class called Matrix and include the
+following member functions: to read a matrix, to display the matrix, to find
+the sum of diagonal elements of the matrix and check whether the sum is prime
+or not by accessing the method checkPrime() from Prime class. 
+
+4. Write a program to create a class Solid with data members’ length, breadth,
+height, and volume. Provide 3 constructors having one parameter (for cube), two
+parameters (for square prism), and three parameters (rectangular prism). Also
+provides functions to calculate area and volume. Find the area of a cube, a
+square prism, and a rectangular prism using the above class. 
+
+5. Create an abstract class called Figure which contains three data members
+(length, breadth and height). Include an abstract method to find the area.
+Figure class also contains concrete methods to read the data members and to
+display them. Derive two classes Rectangle and Triangle from Figure and
+override area() to find the area of a rectangle and triangle. 
+
+6. Write a program to create a class called Rectangle with length, breadth and
+area. Provide functions to find the area and get back to the area. Create a new
+class Box by extending the Rectangle class add two new members, height and
+volume, and also new functions to calculate and get back the volume. 
+
+7. Write a program to create an abstract base class Account with 3 members
+account holder name, account number and balance amount. Provide a constructor
+to initialize data members, a function to deposit cash to an account, and an
+abstract function, withdrawal. 
+
+8. Write a program to create a class Employee with data members name, code and
+basic pay and with functions to initialize and print information. Create an
+interface Salary with a function salary calculation. By inheriting the Employee
+class and Salary Interface create a new class SalarySlip which overrides the
+salary calculation method to calculate the net salary of an employee from basic
+pay. Provide a function to print the Salary Slip of the employee in the
+SalarySlip class. 
+
+9. Write a Java program that implements a multithreaded program has three
+threads. First thread generates a random integer every 1 second and if the
+value is even, second thread computes the square of the number and prints. If
+the value is odd the third thread will print the value of cube of the number. 
+
+10. Write an exception handling program using try, catch, throw, throws and
+finally. 
+
+11. Write a swing program for validating the form having a numeric field,
+character field, phone number, and email ID. 
+
+12. Write a Swing interactive program in which the number is entered in the
+textField, if the entered number is even, it should be displayed in List1
+otherwise in List2. 
+
+13. Write a java program to simulate a traffic light. The program lets the user
+select one of the three lights: red, yellow, or green. On selecting a button,
+an appropriate message with ”Stop”, “Ready” or “ Go” should appear above the
+buttons selected color. 
+
+14. Create an applet using Java, which take a number as input and display table
+of the number. Use appropriate GUI components and layout in your applet. 
+
+15. Write a Java program to define Account class. Derive Saving_Account class
+from Account class. Define appropriate constructors for both classes. Define
+the following methods in the Saving_Account class: 
+  Display( ): To display account details including account number and balance in
+  the account.  
+  Deposit( ): To deposit money in an account. 
+
+16. Write a program that creates a user interface to perform integer divisions.
+The user enters two numbers in the text fields, Num1 and Num2. The division of
+Num1 and Num2 is displayed in the Result field when the Divide button is
+clicked. If Num1 or Num2 were not an integer, the program would throw a
+NumberFormatException. If Num2 were zero, the program would throw an Arithmetic
+Exception Display the exception in a message dialog box. 
+
+17. Write a Java program to create an applet to find the simple interest on a
+given amount, rate of interest and duration. Use proper GUI components in your
+program. 
+
+18. Write an applet program to display the mouse coordinates. 
+19. Write an applet program to display Simple Banner. 
+20. Write a program using GridLayoutManager. 
+21. Write a multithreading program using different priority threads. 
+22. Write a JDBC program to add and display the details of an employee 
+23. Write a JDBC program to add and update the details of a student. 
+
+24. Write a JDBC program to add and delete the details of a product. 
+
+SI No. 
+NAME OF THE PROGRAMS 
+DATE 
+
+1. Fibonacci Series 
+2. Operations On Complex Numbers 
+3. Package Implementation 
+4. Class Implementation 
+5. Abstract Class Implementation 
+6. Inheritance In Java 
+7. Abstract Class With Inheritance 
+8. Interface Implementation 
+9. Multithreading In Java 
+10. Exception Handling 
+11. Validation Using Swing 
+12. Text Field in Swing 
+13. Traffic Light Simulation 
+14. Applet In Java 
+15. Savings Account 
+16. Integer Divisions 
+17. Simple Interest 
+18. Mouse Coordinates 
+19. Simple Banner 
+20. Grid Layout Manager 
+21. Priority Threads 
+22. Employee Details 
+23. Update In JDBC 
+24. Product Details 

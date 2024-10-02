@@ -1,0 +1,46 @@
+% arara: pdflatex: { shell: true }
+% arara: xelatex: { synctex: 1, shell: yes }
+% arara: lualatex: { shell: true, interaction: nonstopmode }
+\documentclass{article}	
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{minted}
+\usepackage{subfiles}
+\usemintedstyle{manni} % Optional: Set a code style (vs is just an example)
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage[labelformat=empty]{caption}
+
+\title{Record}
+\author{Name}
+\date{2023-12-28}
+
+\begin{document}
+%\includepdf[pages={1}]{./Assets/bob.pdf}
+%\newpage
+\tableofcontents
+\newpage
+
+\section{Validation using Swing}
+\subfile{sections/prog11}
+\newpage
+
+%
+%\section{Time Table}
+%\subsection{Aim}
+%\begin{itemize}
+%	\item Design the class time table in HTML using table tag
+%\end{itemize}
+%
+%\subsection{Code}
+%\inputminted[frame=lines, breaklines, breakanywhere, numberblanklines=false]{java}{./prog_2/index.html}
+%
+%\newpage
+%\subsection{Output}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{./Assets/p0201.png}
+%\end{figure}
+%\newpage
+
+\end{document}

@@ -1,0 +1,5 @@
+.envrc
+_minted-main/
+main.*
+!main.tex
+!main.pdf
