@@ -1,12 +1,5 @@
 package org.projects.prog15;
 
-//15. Write a Java program to define Account class. Derive Saving_Account class
-//from Account class. Define appropriate constructors for both classes. Define
-//the following methods in the Saving_Account class: 
-//  Display( ): To display account details including account number and balance in
-//  the account.  
-//  Deposit( ): To deposit money in an account. 
-
 class Account {
   public String accName;
   public long accNumber;

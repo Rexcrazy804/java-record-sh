@@ -5,9 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-//11. Write a swing program for validating the form having a numeric field,
-//character field, phone number, and email ID. 
-
 public class Swing {
   public static void main(String[] args) {
     JFrame frame = new JFrame("Swing Example");

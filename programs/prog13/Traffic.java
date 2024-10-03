@@ -6,11 +6,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-//13. Write a java program to simulate a traffic light. The program lets the user
-//select one of the three lights: red, yellow, or green. On selecting a button,
-//an appropriate message with ”Stop”, “Ready” or “ Go” should appear above the
-//buttons selected color. 
-
 public class Traffic {
   public static void main(String[] args) {
     JFrame frame = new JFrame("Traffic");

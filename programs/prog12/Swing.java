@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-
 public class Swing {
   public static void main(String[] args) {
     JFrame frame = new JFrame("Swing Example");
