@@ -42,3 +42,13 @@ public class Solid {
     cuboid.display();
   }
 }
+
+// OUTPUT
+/*
+Area: 24
+Volume: 8
+Area: 32
+Volume: 12
+Area: 52
+Volume: 24
+*/
