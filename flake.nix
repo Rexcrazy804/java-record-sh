@@ -31,8 +31,18 @@
           ...
         }: let
           tex = (pkgs.texlive.combine {
-            inherit (pkgs.texlive) scheme-small;
-            inherit (pkgs.texlivePackages) minted subfiles;
+            inherit (pkgs.texlive) scheme-basic;
+            inherit (pkgs.texlivePackages) 
+              minted 
+              subfiles 
+              fancyvrb 
+              upquote 
+              arara 
+              caption
+              pdfpages
+              pdflscape
+              luatex
+            ;
           });
         in {
           # treefmt = {
