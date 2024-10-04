@@ -41,7 +41,6 @@
               caption
               pdfpages
               pdflscape
-              luatex
             ;
           });
         in {
