@@ -54,11 +54,13 @@
           programs = {
             alejandra.enable = true;
             google-java-format.enable = true;
-            latexindent.enable = true;
           };
         };
 
         devShells.default = pkgs.mkShell {
+          shellHook = ''
+            git config --local core.hooksPath hooks/
+          '';
           buildInputs = [
             pkgs.python312Packages.pygments
           ];

@@ -1,6 +1,5 @@
 package org.projects.prog2;
 
-
 public class Complex {
   int real, img;
 

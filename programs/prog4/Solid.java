@@ -1,6 +1,5 @@
 package org.projects.prog4;
 
-
 public class Solid {
   int length, breadth, height;
 
