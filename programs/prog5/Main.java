@@ -8,9 +8,7 @@ abstract class Figure {
   void display() {
     // similiar to printf in C <stdio.h>
     System.out.printf(
-      "Length: %d, Breadth: %d, Height: %d\nArea: %d\n",
-      length, breadth, height, area()
-    );
+        "Length: %d, Breadth: %d, Height: %d\nArea: %d\n", length, breadth, height, area());
   }
 }
 
@@ -34,7 +32,7 @@ class Triangle extends Figure {
   }
 
   int area() {
-    return (breadth * height)/2;
+    return (breadth * height) / 2;
   }
 }
 

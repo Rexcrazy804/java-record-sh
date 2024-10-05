@@ -1,4 +1,5 @@
 package org.projects.prog1;
+
 import java.util.Scanner;
 
 public class Fibo {
@@ -13,6 +14,6 @@ public class Fibo {
   }
 
   static int fibo(int num) {
-    return (num <= 1)? num : fibo(num - 1) + fibo (num - 2);
+    return (num <= 1) ? num : fibo(num - 1) + fibo(num - 2);
   }
 }

@@ -32,7 +32,7 @@ public class Interest extends Applet implements ActionListener {
     int r = Integer.parseInt(rate.getText());
     int n = Integer.parseInt(time.getText());
 
-    float si = (p * r * n)/100;
+    float si = (p * r * n) / 100;
     result.setText("" + si);
   }
 }

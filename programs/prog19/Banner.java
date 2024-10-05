@@ -26,6 +26,7 @@ public class Banner extends Applet implements Runnable {
         bannerText = bannerText.substring(1) + bannerText.charAt(0);
         repaint();
       }
-    } catch (Exception e) {}
+    } catch (Exception e) {
+    }
   }
 }

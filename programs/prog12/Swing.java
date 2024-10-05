@@ -1,8 +1,8 @@
 package org.projects.prog12;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 public class Swing {
@@ -28,20 +28,20 @@ public class Swing {
 
     JButton submit = new JButton("Submit");
 
-    submit.addActionListener( new ActionListener() {
-      public void actionPerformed(ActionEvent e) throws NumberFormatException {
-        int num = Integer.parseInt(number.getText());
-        number.setText("");
-        if (num % 2 == 0) {
-          list1.setText(list1.getText() + " " + num);
-        } else {
-          list2.setText(list2.getText() + " " + num);
-        }
-      }
-    });
+    submit.addActionListener(
+        new ActionListener() {
+          public void actionPerformed(ActionEvent e) throws NumberFormatException {
+            int num = Integer.parseInt(number.getText());
+            number.setText("");
+            if (num % 2 == 0) {
+              list1.setText(list1.getText() + " " + num);
+            } else {
+              list2.setText(list2.getText() + " " + num);
+            }
+          }
+        });
 
     frame.add(submit);
     frame.setVisible(true);
   }
 }
-

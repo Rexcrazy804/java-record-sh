@@ -4,7 +4,7 @@ class Account {
   public String accName;
   public long accNumber;
 
-  Account (String name, long number) {
+  Account(String name, long number) {
     accName = name;
     accNumber = number;
   }

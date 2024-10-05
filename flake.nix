@@ -7,12 +7,17 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+
+    treefmt = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {flake-parts, ...} @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
-        # inputs.treefmt.flakeModule
+        inputs.treefmt.flakeModule
       ];
 
       flake = {
@@ -24,42 +29,44 @@
         "aarch64-linux"
       ];
 
-      perSystem = 
-        {
-          pkgs,
-          system,
-          ...
-        }: let
-          tex = (pkgs.texlive.combine {
-            inherit (pkgs.texlive) scheme-basic;
-            inherit (pkgs.texlivePackages) 
-              minted 
-              subfiles 
-              fancyvrb 
-              upquote 
-              arara 
-              caption
-              pdfpages
-              pdflscape
+      perSystem = {
+        pkgs,
+        system,
+        ...
+      }: let
+        tex = pkgs.texlive.combine {
+          inherit (pkgs.texlive) scheme-basic;
+          inherit
+            (pkgs.texlivePackages)
+            minted
+            subfiles
+            fancyvrb
+            upquote
+            arara
+            caption
+            pdfpages
+            pdflscape
             ;
-          });
-        in {
-          # treefmt = {
-          #   projectRootFile = "./.git/config";
-          #   programs = {
-          #     alejandra.enable = true;
-          #   };
-          # };
-
-          devShells.default = pkgs.mkShell {
-            buildInputs = [
-              pkgs.python312Packages.pygments
-            ];
-
-            packages = [
-              tex
-            ];
+        };
+      in {
+        treefmt = {
+          projectRootFile = "./.git/config";
+          programs = {
+            alejandra.enable = true;
+            google-java-format.enable = true;
+            latexindent.enable = true;
           };
         };
+
+        devShells.default = pkgs.mkShell {
+          buildInputs = [
+            pkgs.python312Packages.pygments
+          ];
+
+          packages = [
+            tex
+          ];
+        };
+      };
     };
 }

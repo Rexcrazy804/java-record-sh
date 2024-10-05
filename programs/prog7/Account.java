@@ -19,4 +19,3 @@ public abstract class Account {
 
   abstract void withdraw(int amount);
 }
-

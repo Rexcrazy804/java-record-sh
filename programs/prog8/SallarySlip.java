@@ -24,7 +24,8 @@ interface Salary {
 public class SallarySlip extends Employee implements Salary {
   int allowances, bonuses, deductions;
 
-  public SallarySlip(String name, String code, int basicPay, int allowances, int bonuses, int deductions) {
+  public SallarySlip(
+      String name, String code, int basicPay, int allowances, int bonuses, int deductions) {
     super(name, code, basicPay);
     this.allowances = allowances;
     this.bonuses = bonuses;
@@ -36,13 +37,10 @@ public class SallarySlip extends Employee implements Salary {
   }
 
   public void display() {
-    System.out.printf(
-      "Employee: %s\nCode: %s\nFinal Sallary: %d\n",
-      name, code, calculate()
-    );
+    System.out.printf("Employee: %s\nCode: %s\nFinal Sallary: %d\n", name, code, calculate());
   }
 
-  public static void main (String args[]) {
+  public static void main(String args[]) {
     SallarySlip slip = new SallarySlip("Bob Rose", "001", 10000, 4000, 3000, 1500);
     slip.display();
   }

@@ -23,14 +23,14 @@ public class Tables extends Applet implements ActionListener {
 
   public void paint(Graphics g) {
     for (int i = 0; i < 10; i++) {
-      g.drawString(result[i], 20, 40 + 20*i);
+      g.drawString(result[i], 20, 40 + 20 * i);
     }
   }
 
   public void actionPerformed(ActionEvent e) {
     int number = Integer.parseInt(t1.getText());
     for (int i = 1; i <= 10; i++) {
-      result[i-1] = number + " x " + i + " = " + i * number;
+      result[i - 1] = number + " x " + i + " = " + i * number;
     }
   }
 }

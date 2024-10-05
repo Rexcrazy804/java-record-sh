@@ -1,6 +1,7 @@
 package org.projects.prog3.mypack;
-import org.projects.prog3.pack.Prime;
+
 import java.util.Scanner;
+import org.projects.prog3.pack.Prime;
 
 public class Matrix {
   public static void main(String args[]) {
@@ -8,7 +9,7 @@ public class Matrix {
     int size = 3;
     int matrix[][] = new int[size][size];
 
-    System.out.println("Enter " + size*size + " matrix elements");
+    System.out.println("Enter " + size * size + " matrix elements");
     String output = "";
     int diagSum = 0;
     for (int i = 0; i < size; i++) {
@@ -23,7 +24,9 @@ public class Matrix {
         // ez math for finding the diagonal elements also lazy to make another
         // loop for this so we're doing it all in one neat for loop
         // here size is the number of rows and columns of our square matrix
-        if (i == j || size - (i + 1) == j) { diagSum += input; }
+        if (i == j || size - (i + 1) == j) {
+          diagSum += input;
+        }
       }
       output += "\n";
     }
@@ -44,7 +47,7 @@ public class Matrix {
   0 1 0
   0 1 2
   Given Matrix:
-  1 2 3 
-  0 1 0 
-  0 1 2 
+  1 2 3
+  0 1 0
+  0 1 2
 */

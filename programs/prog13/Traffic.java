@@ -1,9 +1,9 @@
 package org.projects.prog13;
+
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 public class Traffic {
@@ -32,11 +32,12 @@ public class Traffic {
     green.setBackground(Color.GREEN);
     panel.add(green);
 
-    ActionListener on_click = new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        sign.setText(((JButton) e.getSource()).getText());
-      }
-    };
+    ActionListener on_click =
+        new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            sign.setText(((JButton) e.getSource()).getText());
+          }
+        };
 
     red.addActionListener(on_click);
     yellow.addActionListener(on_click);

@@ -1,8 +1,8 @@
 package org.projects.prog11;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 public class Swing {
@@ -24,28 +24,36 @@ public class Swing {
     JLabel result = new JLabel();
     result.setHorizontalAlignment(JLabel.CENTER);
 
-    submit.addActionListener( new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        String em = email.getText();
-        String phone = phoneNum.getText();
-        result.setText("invalid");
+    submit.addActionListener(
+        new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            String em = email.getText();
+            String phone = phoneNum.getText();
+            result.setText("invalid");
 
-        if (em.isEmpty() || phone.isEmpty()) { return; }
+            if (em.isEmpty() || phone.isEmpty()) {
+              return;
+            }
 
-        try {
-          Long.parseLong(phone);
-          if (phone.length() < 10) { return; }
-        } catch (Exception error) { return; }
+            try {
+              Long.parseLong(phone);
+              if (phone.length() < 10) {
+                return;
+              }
+            } catch (Exception error) {
+              return;
+            }
 
-        if (!em.contains("@")) { return; }
+            if (!em.contains("@")) {
+              return;
+            }
 
-        result.setText("Valid");
-      }
-    });
+            result.setText("Valid");
+          }
+        });
 
     frame.add(submit);
     frame.add(result);
     frame.setVisible(true);
   }
 }
-

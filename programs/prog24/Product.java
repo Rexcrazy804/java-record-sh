@@ -1,17 +1,19 @@
 package org.projects.prog24;
+
 import java.sql.*;
 import java.util.Scanner;
 
 public class Product {
   public static Scanner sc = new Scanner(System.in);
+
   public static void main(String args[]) {
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
       String username = "root", password = "coolPass", dbname = "dbone";
-      Connection cn = DriverManager.getConnection(
-        //"jdbc:mysql://localhost:3306/dbone", "root", "coolPass"
-        "jdbc:mysql://localhost:3306/" + dbname, username, password
-      ); 
+      Connection cn =
+          DriverManager.getConnection(
+              // "jdbc:mysql://localhost:3306/dbone", "root", "coolPass"
+              "jdbc:mysql://localhost:3306/" + dbname, username, password);
 
       boolean done = false;
       while (!done) {
@@ -36,7 +38,8 @@ public class Product {
         }
       }
       cn.close();
-    } catch (Exception e) {}
+    } catch (Exception e) {
+    }
   }
 
   public static void addProduct(Connection cn) {
@@ -49,30 +52,26 @@ public class Product {
 
     // to create the table use the following mysql code
     // create table products (
-    //   id int unique AUTO_INCREMENT, 
-    //   name varchar(20) not null, 
+    //   id int unique AUTO_INCREMENT,
+    //   name varchar(20) not null,
     //   price decimal(8, 2) not null,
     // );
 
     try {
-      cn.createStatement().execute(String.format(
-        "INSERT INTO products (name, price) VALUES ('%s', %f)",
-        name, price
-      ));
+      cn.createStatement()
+          .execute(
+              String.format("INSERT INTO products (name, price) VALUES ('%s', %f)", name, price));
     } catch (Exception e) {
       System.out.println(e.getMessage());
     }
   }
 
-  public static void deleteProduct(Connection cn) { 
+  public static void deleteProduct(Connection cn) {
     System.out.println("Enter and id to delete");
     int id = sc.nextInt();
 
     try {
-      cn.createStatement().execute(String.format(
-        "DELETE FROM products WHERE id = %d",
-        id
-      ));
+      cn.createStatement().execute(String.format("DELETE FROM products WHERE id = %d", id));
     } catch (Exception e) {
       System.out.println(e.getMessage());
     }
@@ -82,11 +81,11 @@ public class Product {
     try {
       ResultSet set = cn.createStatement().executeQuery("select * from products");
       while (set.next()) {
-        System.out.println(String.format(
-          "id: %d, name: %s, cost: %f",
-          set.getInt(1), set.getString(2), set.getFloat(3)
-        ));
+        System.out.println(
+            String.format(
+                "id: %d, name: %s, cost: %f", set.getInt(1), set.getString(2), set.getFloat(3)));
       }
-    } catch (Exception e) {}
+    } catch (Exception e) {
+    }
   }
 }

@@ -2,12 +2,15 @@ package org.projects.prog6;
 
 class Rectangle {
   int length, breadth;
+
   public Rectangle(int length, int breadth) {
     this.length = length;
     this.breadth = breadth;
   }
 
-  public int area() { return length * breadth; }
+  public int area() {
+    return length * breadth;
+  }
 }
 
 public class Box extends Rectangle {
@@ -18,8 +21,13 @@ public class Box extends Rectangle {
     this.height = height;
   }
 
-  public int area() { return 2 * ((length*breadth) + (breadth*height) + (height*length)); }
-  public int volume() { return length * breadth * height; }
+  public int area() {
+    return 2 * ((length * breadth) + (breadth * height) + (height * length));
+  }
+
+  public int volume() {
+    return length * breadth * height;
+  }
 
   public static void main(String args[]) {
     Rectangle rec = new Rectangle(2, 3);
@@ -29,7 +37,7 @@ public class Box extends Rectangle {
     System.out.printf("Area of Box: %d\nVolume of Box: %d\n", box.area(), box.volume());
   }
 }
-//OUTPUT
+// OUTPUT
 /*
 Area of Rectangle: 6
 Area of Box: 32

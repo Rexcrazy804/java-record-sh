@@ -1,4 +1,5 @@
 package org.projects.prog18;
+
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -22,5 +23,6 @@ public class MouseProg extends Applet implements MouseMotionListener {
     y = e.getY();
     repaint();
   }
+
   public void mouseDragged(MouseEvent e) {}
 }

@@ -1,8 +1,8 @@
 package org.projects.prog20;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class GridLay {
   public static void main(String args[]) {
@@ -23,13 +23,14 @@ public class GridLay {
     JButton submit = new JButton("Submit");
     JLabel hello = new JLabel();
 
-    submit.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        hello.setText("Hello " + name.getText() + "!!");
-      }
-    });
+    submit.addActionListener(
+        new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            hello.setText("Hello " + name.getText() + "!!");
+          }
+        });
     frame.add(submit);
-    
+
     frame.add(hello);
 
     frame.setVisible(true);
