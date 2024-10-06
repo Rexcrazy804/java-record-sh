@@ -8,8 +8,8 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    treefmt = {
-      url = "github:numtide/treefmt-nix";
+    git-hooks-nix = {
+      url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -17,7 +17,7 @@
   outputs = {flake-parts, ...} @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
-        inputs.treefmt.flakeModule
+        inputs.git-hooks-nix.flakeModule
       ];
 
       flake = {
@@ -32,6 +32,7 @@
       perSystem = {
         pkgs,
         system,
+        config,
         ...
       }: let
         tex = pkgs.texlive.combine {
@@ -49,20 +50,29 @@
             ;
         };
       in {
-        treefmt = {
-          projectRootFile = "./.git/config";
-          programs = {
+        pre-commit = {
+          check.enable = true;
+          settings.hooks = {
+            goole-java-format = {
+              enable = true;
+              name = "google-java-format";
+              description = "Run the google java formatter";
+              files = "\\.java$";
+              extraPackages = [pkgs.google-java-format];
+              entry = "google-java-format --set-exit-if-changed --replace";
+            };
+
+            chktex.enable = true;
             alejandra.enable = true;
-            google-java-format.enable = true;
           };
         };
-
         devShells.default = pkgs.mkShell {
           shellHook = ''
-            git config --local core.hooksPath hooks/
+            ${config.pre-commit.installationScript}
           '';
           buildInputs = [
             pkgs.python312Packages.pygments
+            config.pre-commit.settings.enabledPackages
           ];
 
           packages = [
