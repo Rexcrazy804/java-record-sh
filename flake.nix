@@ -64,6 +64,7 @@
 
             chktex.enable = true;
             alejandra.enable = true;
+            latexindent.enable = true;
           };
         };
         devShells.default = pkgs.mkShell {
