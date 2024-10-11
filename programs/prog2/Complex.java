@@ -9,25 +9,20 @@ public class Complex {
   }
 
   void display() {
-    // some formating to correctly display complex numbers
-    String fmt =
-        String.format("%d %c %di", real, (img > 0) ? '+' : '-', (img > 0) ? img : (-1 * img));
-
-    System.out.println(fmt);
+    // formatting for correctly displaying complex numbers
+    System.out.printf("%d %si\n", real, (img > 0) ? "+ " + img : "- " + -img);
   }
 
   static Complex add(Complex n1, Complex n2) {
-    return new Complex(n1.real + n2.real, n1.img + n2.img);
+    int real = n1.real + n2.real;
+    int img = n1.img + n2.img;
+    return new Complex(real, img);
   }
 
   static Complex multiply(Complex n1, Complex n2) {
-    // alg
-    // (a + bi) * (c + di)
-    // = ac + adi + bci - bd =
-    // = (ac - bd) + (ad + bc)i
-    int real = n1.real * n2.real - (n1.img * n2.img);
+    int real = (n1.real * n2.real) - (n1.img * n2.img);
     int img = (n1.real * n2.img) + (n1.img * n2.real);
-    return new Complex(real, img);
+    return new Complex(real, img); // result = (ac - bd) + (ad + bc)i
   }
 
   static void cmp(Complex n1, Complex n2) {
@@ -48,7 +43,6 @@ public class Complex {
     c2.display();
     c3.display();
     c4.display();
-
     cmp(c1, c2);
     cmp(c1, c1);
   }

@@ -1,6 +1,11 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-Write a program to print Fibonacci series up to ‘n’ times (read ‘n’ as command line argument)
+Create a package called pack which contains a class Prime with a member
+function checkPrime() to check whether a number is prime or not. Create another
+package called mypack containing a class Matrix with the member functions to:
+read a matrix, display the matrix, find the sum of diagonal elements of the
+matrix and check whether the sum is prime or not by accessing the method
+checkPrime() from Prime class.
 
 \subsection{Code}
 Prime.java (package pack)
@@ -9,8 +14,14 @@ Matrix.java (package mypack)
 \inputminted[frame=lines, breaklines, breakanywhere, numberblanklines=false]{java}{./programs/prog3/mypack/Matrix.java}
 
 \subsection{Output}
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=1\textwidth]{./Assets/p0101.jpeg}
-%\end{figure}
+Enter 9 matrix elements \\
+1 2 3 \\
+0 1 0 \\
+0 1 2 \\
+Given Matrix: \\
+1 2 3 \\
+0 1 0 \\
+0 1 2 \\
+\\
+Diagonal is prime \\
 \end{document}

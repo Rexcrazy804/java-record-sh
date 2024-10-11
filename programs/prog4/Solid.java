@@ -15,9 +15,9 @@ public class Solid {
     this.height = height;
   }
 
+  // its really easy to mispell length/breadth/height and get into odd errors
+  // ideally during exams shorten these to just l, b, h;
   public Solid(int length, int breadth, int height) {
-    // its really easy to mispell length/breadth/height and get into odd errors
-    // ideally during exams shorten these to just l, b, h;
     this.length = length;
     this.breadth = breadth;
     this.height = height;
@@ -43,13 +43,3 @@ public class Solid {
     cuboid.display();
   }
 }
-
-// OUTPUT
-/*
-Area: 24
-Volume: 8
-Area: 32
-Volume: 12
-Area: 52
-Volume: 24
-*/

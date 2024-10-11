@@ -4,50 +4,51 @@ import java.util.Scanner;
 import org.projects.prog3.pack.Prime;
 
 public class Matrix {
-  public static void main(String args[]) {
-    Scanner sc = new Scanner(System.in);
-    int size = 3;
-    int matrix[][] = new int[size][size];
+  public static final int size = 3;
+  public int matrix[][] = new int[size][size];
 
+  public void accept() {
+    Scanner sc = new Scanner(System.in);
     System.out.println("Enter " + size * size + " matrix elements");
-    String output = "";
     int diagSum = 0;
     for (int i = 0; i < size; i++) {
       for (int j = 0; j < size; j++) {
-        int input = sc.nextInt();
-        matrix[i][j] = input;
+        matrix[i][j] = sc.nextInt();
+      }
+    }
+  }
 
-        // store matrix elements in output variable to skip the need for
-        // another nested for loop
-        output += input + " ";
+  public void display() {
+    System.out.println("Given Matrix:");
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
+        System.out.print(matrix[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
 
-        // condition for finding the diagonal elements
+  public int diagSum() {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
         if (i == j || size - (i + 1) == j) {
-          diagSum += input;
+          sum += matrix[i][j];
         }
       }
-      output += "\n";
     }
+    return sum;
+  }
 
-    System.out.println("Given Matrix:\n" + output);
-    if (Prime.checkPrime(diagSum)) {
+  public static void main(String args[]) {
+    Matrix mat = new Matrix();
+    mat.accept();
+    mat.display();
+
+    if (Prime.checkPrime(mat.diagSum())) {
       System.out.println("Diagonal is prime");
     } else {
       System.out.println("Diagonal is not prime");
     }
   }
 }
-
-// OUTPUT
-/*
-  Enter 9 matrix elements
-  1 2 3
-  0 1 0
-  0 1 2
-  Given Matrix:
-  1 2 3
-  0 1 0
-  0 1 2
-
-  Diagonal is prime
-*/

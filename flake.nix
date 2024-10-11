@@ -34,22 +34,7 @@
         system,
         config,
         ...
-      }: let
-        tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-basic;
-          inherit
-            (pkgs.texlivePackages)
-            minted
-            subfiles
-            fancyvrb
-            upquote
-            arara
-            caption
-            pdfpages
-            pdflscape
-            ;
-        };
-      in {
+      }: {
         pre-commit = {
           check.enable = true;
           settings.hooks = {
@@ -62,7 +47,6 @@
               entry = "google-java-format --set-exit-if-changed --replace";
             };
 
-            chktex.enable = true;
             alejandra.enable = true;
             latexindent.enable = true;
           };
@@ -76,9 +60,22 @@
             config.pre-commit.settings.enabledPackages
           ];
 
-          packages = [
-            tex
-          ];
+          packages = let
+            tex = pkgs.texlive.combine {
+              inherit (pkgs.texlive) scheme-basic;
+              inherit
+                (pkgs.texlivePackages)
+                minted
+                subfiles
+                fancyvrb
+                upquote
+                arara
+                caption
+                pdfpages
+                pdflscape
+                ;
+            };
+          in [tex];
         };
       };
     };
