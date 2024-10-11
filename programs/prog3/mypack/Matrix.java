@@ -16,14 +16,12 @@ public class Matrix {
       for (int j = 0; j < size; j++) {
         int input = sc.nextInt();
         matrix[i][j] = input;
-        // I don't want to write another nested for loop to print this matrix
-        // so we neatly store the matrix in an output string variable and print
-        // it out later :)
+
+        // store matrix elements in output variable to skip the need for
+        // another nested for loop
         output += input + " ";
 
-        // ez math for finding the diagonal elements also lazy to make another
-        // loop for this so we're doing it all in one neat for loop
-        // here size is the number of rows and columns of our square matrix
+        // condition for finding the diagonal elements
         if (i == j || size - (i + 1) == j) {
           diagSum += input;
         }
@@ -50,4 +48,6 @@ public class Matrix {
   1 2 3
   0 1 0
   0 1 2
+
+  Diagonal is prime
 */

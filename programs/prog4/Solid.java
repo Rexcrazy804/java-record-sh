@@ -16,8 +16,8 @@ public class Solid {
   }
 
   public Solid(int length, int breadth, int height) {
-    // its really easy to mispell length/breadth/height and get into odd errors ideally during
-    // exams I recommend shortening these to just l, b, h;
+    // its really easy to mispell length/breadth/height and get into odd errors
+    // ideally during exams shorten these to just l, b, h;
     this.length = length;
     this.breadth = breadth;
     this.height = height;
