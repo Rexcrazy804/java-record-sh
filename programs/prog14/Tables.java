@@ -32,5 +32,6 @@ public class Tables extends Applet implements ActionListener {
     for (int i = 1; i <= 10; i++) {
       result[i - 1] = number + " x " + i + " = " + i * number;
     }
+    repaint();
   }
 }
