@@ -1,7 +1,7 @@
 package org.projects.prog6;
 
 class Rectangle {
-  int length, breadth;
+  int length, breadth, area;
 
   public Rectangle(int length, int breadth) {
     this.length = length;
@@ -9,12 +9,13 @@ class Rectangle {
   }
 
   public int area() {
-    return length * breadth;
+    area = length * breadth;
+    return area;
   }
 }
 
 public class Box extends Rectangle {
-  int height;
+  int height, volume;
 
   public Box(int length, int breadth, int height) {
     super(length, breadth);
@@ -22,11 +23,13 @@ public class Box extends Rectangle {
   }
 
   public int area() {
-    return 2 * ((length * breadth) + (breadth * height) + (height * length));
+    area = 2 * ((length * breadth) + (breadth * height) + (height * length));
+    return area;
   }
 
   public int volume() {
-    return length * breadth * height;
+    volume = length * breadth * height;
+    return volume;
   }
 
   public static void main(String args[]) {
@@ -37,9 +40,3 @@ public class Box extends Rectangle {
     System.out.printf("Area of Box: %d\nVolume of Box: %d\n", box.area(), box.volume());
   }
 }
-// OUTPUT
-/*
-Area of Rectangle: 6
-Area of Box: 32
-Volume of Box: 12
-*/

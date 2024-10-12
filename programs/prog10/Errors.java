@@ -1,16 +1,13 @@
 package org.projects.prog10;
 
 public class Errors {
-  static void division() throws InterruptedException {
-    Thread.sleep(100);
-    throw new ArithmeticException("division by zero");
+  static void division() throws ArithmeticException {
+    throw new ArithmeticException("/ by zero");
   }
 
   public static void main(String args[]) {
     try {
       division();
-    } catch (InterruptedException e) {
-      System.out.println(e.getMessage());
     } catch (ArithmeticException e) {
       System.out.println(e.getMessage());
     } finally {
@@ -18,8 +15,3 @@ public class Errors {
     }
   }
 }
-// output
-/*
-division by zero
-Hello Mars!
-*/

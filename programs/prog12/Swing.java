@@ -1,46 +1,48 @@
 package org.projects.prog12;
 
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class Swing {
   public static void main(String[] args) {
     JFrame frame = new JFrame("Swing Example");
-    frame.setLayout(new GridLayout(4, 2));
+    frame.setLayout(new GridLayout(3, 1));
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(300, 130);
+    frame.setSize(300, 400);
 
+    JPanel inputPanel = new JPanel();
+    inputPanel.setLayout(new GridLayout(1, 2));
     JTextField number = new JTextField();
-    frame.add(new JLabel("Number: "));
-    frame.add(number);
+    inputPanel.add(new JLabel("Number: "));
+    inputPanel.add(number);
+    frame.add(inputPanel);
 
-    JLabel list1 = new JLabel();
-    list1.setHorizontalAlignment(JLabel.CENTER);
-    frame.add(new JLabel("List 1"));
-    frame.add(list1);
-
-    JLabel list2 = new JLabel();
-    list2.setHorizontalAlignment(JLabel.CENTER);
-    frame.add(new JLabel("List 2"));
-    frame.add(list2);
+    JPanel listPanel = new JPanel();
+    listPanel.setLayout(new GridLayout(2, 2));
+    final DefaultListModel<String> dl1 = new DefaultListModel<>();
+    final JList<String> list1 = new JList<>(dl1);
+    final DefaultListModel<String> dl2 = new DefaultListModel<>();
+    final JList<String> list2 = new JList<>(dl2);
+    listPanel.add(new JLabel("List 1"));
+    listPanel.add(new JLabel("List 2"));
+    listPanel.add(list1);
+    listPanel.add(list2);
+    frame.add(listPanel);
 
     JButton submit = new JButton("Submit");
-
     submit.addActionListener(
         new ActionListener() {
           public void actionPerformed(ActionEvent e) throws NumberFormatException {
-            int num = Integer.parseInt(number.getText());
-            number.setText("");
-            if (num % 2 == 0) {
-              list1.setText(list1.getText() + " " + num);
+            String num = number.getText();
+            if (Integer.parseInt(num) % 2 == 0) {
+              dl1.addElement(num);
             } else {
-              list2.setText(list2.getText() + " " + num);
+              dl2.addElement(num);
             }
+            number.setText("");
           }
         });
-
     frame.add(submit);
     frame.setVisible(true);
   }
