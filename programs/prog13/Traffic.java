@@ -20,22 +20,37 @@ public class Traffic {
     JPanel panel = new JPanel();
     panel.setLayout(new GridLayout(1, 3));
 
-    JButton red = new JButton("STOP");
+    JButton red = new JButton();
     red.setBackground(Color.RED);
+    red.setOpaque(true);
+    red.setBorderPainted(false);
     panel.add(red);
 
-    JButton yellow = new JButton("READY");
+    JButton yellow = new JButton();
     yellow.setBackground(Color.YELLOW);
+    yellow.setOpaque(true);
+    yellow.setBorderPainted(false);
     panel.add(yellow);
 
-    JButton green = new JButton("GO");
+    JButton green = new JButton();
     green.setBackground(Color.GREEN);
+    green.setOpaque(true);
+    green.setBorderPainted(false);
     panel.add(green);
 
     ActionListener on_click =
         new ActionListener() {
           public void actionPerformed(ActionEvent e) {
-            sign.setText(((JButton) e.getSource()).getText());
+            String text;
+            Color bg_color = ((JButton) e.getSource()).getBackground();
+            if (bg_color == Color.RED) {
+              text = "STOP";
+            } else if (bg_color == Color.YELLOW) {
+              text = "WAIT";
+            } else {
+              text = "GO";
+            }
+            sign.setText(text);
           }
         };
 
