@@ -13,12 +13,16 @@ public class Tables extends Applet implements ActionListener {
     t1 = new TextField(5);
     t2 = new Button("Submit");
     t2.addActionListener(this);
-
     result = new String[10];
 
-    add(new Label("Enter a number"));
-    add(t1);
-    add(t2);
+    setLayout(new GridLayout(11, 1));
+    Panel pane = new Panel();
+    pane.setLayout(new GridLayout(1, 3));
+
+    pane.add(new Label("Enter a number"));
+    pane.add(t1);
+    pane.add(t2);
+    add(pane);
   }
 
   public void paint(Graphics g) {
