@@ -9,11 +9,10 @@ public class Product {
   public static void main(String args[]) {
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
+      // NOTE: password maybe different
       String username = "root", password = "coolPass", dbname = "dbone";
       Connection cn =
-          DriverManager.getConnection(
-              // "jdbc:mysql://localhost:3306/dbone", "root", "coolPass"
-              "jdbc:mysql://localhost:3306/" + dbname, username, password);
+          DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbname, username, password);
 
       boolean done = false;
       while (!done) {
@@ -81,11 +80,11 @@ public class Product {
     try {
       ResultSet set = cn.createStatement().executeQuery("select * from products");
       while (set.next()) {
-        System.out.println(
-            String.format(
-                "id: %d, name: %s, cost: %f", set.getInt(1), set.getString(2), set.getFloat(3)));
+        System.out.printf(
+            "id: %d, name: %s, cost: %f\n", set.getInt(1), set.getString(2), set.getFloat(3));
       }
     } catch (Exception e) {
+      // ignore
     }
   }
 }
