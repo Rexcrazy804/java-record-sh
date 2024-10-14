@@ -1,3 +1,5 @@
+package org.projects.prog19;
+
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -27,6 +29,7 @@ public class Banner extends Applet implements Runnable {
         repaint();
       }
     } catch (Exception e) {
+      // ignore
     }
   }
 }
