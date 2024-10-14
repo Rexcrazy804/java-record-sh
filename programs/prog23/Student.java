@@ -65,7 +65,7 @@ public class Student {
   }
 
   public static void updateStudent(Connection cn) {
-    System.out.println("Enter rol number to update");
+    System.out.println("Enter roll number to update");
     int roll = sc.nextInt();
 
     System.out.println("Enter new age");
@@ -88,10 +88,9 @@ public class Student {
     try {
       ResultSet set = cn.createStatement().executeQuery("select * from students");
       while (set.next()) {
-        System.out.println(
-            String.format(
-                "roll: %d, name: %s, age: %d, grade: %s",
-                set.getInt(1), set.getString(2), set.getInt(3), set.getString(4)));
+        System.out.printf(
+            "roll: %d, name: %s, age: %d, grade: %s\n",
+            set.getInt(1), set.getString(2), set.getInt(3), set.getString(4));
       }
     } catch (Exception e) {
     }
