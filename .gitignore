@@ -5,3 +5,4 @@ main.*
 !main.pdf
 .pre-commit-config.yaml
 *.log
+assets/frontpage.pdf

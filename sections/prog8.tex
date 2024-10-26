@@ -1,19 +1,18 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-Write a program to create a class Employee with data members name, code and
-basic pay and with functions to initialize and print information. Create an
-interface Salary with a function salary calculation. By inheriting the Employee
-class and Salary Interface create a new class SalarySlip which overrides the
-salary calculation method to calculate the net salary of an employee from basic
-pay. Provide a function to print the Salary Slip of the employee in the
-SalarySlip class.
+Write a program to create an interface Shape providing abstract funtions to
+calculate the area and volume. Implement the interface on two classes: Cube and
+Cuboid. Write a main class to create one object each of classes Cube and
+Cuboid. Store the objects in an array and employ a for each loop to display
+their area and volume.
 
 \subsection{Code}
-%\inputminted[frame=lines, breaklines, breakanywhere, numberblanklines=false]{java}{./programs/prog8/SallarySlip.java}
+\inputminted[frame=lines, breaklines, breakanywhere, numberblanklines=false]{java}{./programs/prog8/Interface.java}
 
 \subsection{Output}
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=1\textwidth]{./Assets/p0101.jpeg}
-%\end{figure}
+Area: 24 \\
+Volume: 8 \\
+Area: 32 \\
+Volume: 12 \\
+
 \end{document}
